@@ -49,14 +49,14 @@ import { BsDatepickerConfig } from '../../bs-datepicker.config';
                 (mouseleave)="weekHoverHandler(week, false)">{{ calendar.weekNumbers[i] }}</span>
           </td>
           <td *ngFor="let day of week.days" role="gridcell">
-          <span *ngIf="!isiOS" bsDatepickerDayDecorator
+          <button *ngIf="!isiOS" bsDatepickerDayDecorator
                 [day]="day"
                 (click)="selectDay(day)"
                 (mouseenter)="hoverDay(day, true)"
-                (mouseleave)="hoverDay(day, false)">{{ day.label }}</span>
-            <span *ngIf="isiOS" bsDatepickerDayDecorator
+                (mouseleave)="hoverDay(day, false)">{{ day.label }}</button>
+            <button *ngIf="isiOS" bsDatepickerDayDecorator
                   [day]="day"
-                  (click)="selectDay(day)">{{ day.label }}</span>
+                  (click)="selectDay(day)">{{ day.label }}</button>
           </td>
         </tr>
         </tbody>
